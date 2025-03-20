@@ -8,12 +8,10 @@ function GuildRosterDumper_exportData()
 		GuildRosterData = {}
 		
 		for i = 1, GetNumGuildMembers(true) do
-				local name, arg2, arg3, arg4, arg5, arg6, arg7, officernote, arg8, arg9 = GetGuildRosterInfo(i)
+				local arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 = GetGuildRosterInfo(i)
 				
 				GuildRosterDumperDataDB[i] = {}
-				GuildRosterDumperDataDB[i].name = name
-				GuildRosterDumperDataDB[i].class = class
-				GuildRosterDumperDataDB[i].officernote = officernote
+				GuildRosterDumperDataDB[i].arg1 = arg1
 				GuildRosterDumperDataDB[i].arg2 = arg2
 				GuildRosterDumperDataDB[i].arg3 = arg3
 				GuildRosterDumperDataDB[i].arg4 = arg4
@@ -22,13 +20,15 @@ function GuildRosterDumper_exportData()
 				GuildRosterDumperDataDB[i].arg7 = arg7
 				GuildRosterDumperDataDB[i].arg8 = arg8
 				GuildRosterDumperDataDB[i].arg9 = arg9
+				GuildRosterDumperDataDB[i].arg10 = arg10
+				GuildRosterDumperDataDB[i].arg11 = arg11
 		end
 				
 		guild = GetGuildInfo("player")
 		GuildRosterDumperDataFrame = "Guild Roster Dump for " .. guild .. " at " .. date("%y-%m-%d %H:%M:%S") .. "\r\n" .. "\r\n"
 		
 		for i in GuildRosterDumperDB do
-				GuildRosterDumperFrame = GuildRosterDumperDataFrame .. GuildRosterDumperDataDB[i].name .. "," .. GuildRosterDumperDataDB[i].class .. "," .. GuildRosterDumperDataDB[i].officernote .. "," .. GuildRosterDumperDataDB[i].arg2 .. "," .. GuildRosterDumperDataDB[i].arg3 .. "," .. GuildRosterDumperDataDB[i].arg4 .. "," .. GuildRosterDumperDataDB[i].arg5 .. "," .. GuildRosterDumperDataDB[i].arg6 .. "," .. GuildRosterDumperDataDB[i].arg7 .. "," .. GuildRosterDumperDataDB[i].arg8 .. "," .. GuildRosterDumperDataDB[i].arg9 .. "\r\n"
+				GuildRosterDumperFrame = GuildRosterDumperDataFrame .. GuildRosterDumperDataDB[i].arg1 .. "," .. GuildRosterDumperDataDB[i].arg2 .. "," .. GuildRosterDumperDataDB[i].arg3 .. "," .. GuildRosterDumperDataDB[i].arg4 .. "," .. GuildRosterDumperDataDB[i].arg5 .. "," .. GuildRosterDumperDataDB[i].arg6 .. "," .. GuildRosterDumperDataDB[i].arg7 .. "," .. GuildRosterDumperDataDB[i].arg8 .. "," .. GuildRosterDumperDataDB[i].arg9 .. "," .. GuildRosterDumperDataDB[i].arg10 .. "," .. GuildRosterDumperDataDB[i].arg11 .. "\r\n"
 		end
 		
 		GuildRosterDumper_ExportRaidFrameEditBox1:SetFont("Fonts\\FRIZQT__.TTF", "8")
