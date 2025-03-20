@@ -1,12 +1,11 @@
 function GuildRosterDumper_OnLoad()
 		SLASH_GUILDDUMP1 = "/grd"
 		SLASH_GUILDDUMP2 = "/grdump"
-		SlashCmdList["GUILDDUMP"] = GuildRosterDumper_exportData
+		SlashCmdList["GUILDROSTERDUMP"] = GuildRosterDumper_exportData
 end
 
 function GuildRosterDumper_exportData()
-		GuildRosterDumperData = {}
-		GuildRosterDumperDataDB = {}
+		GuildRosterData = {}
 		
 		for i = 1, GetNumGuildMembers(true) do
 				local arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 = GetGuildRosterInfo(i)
@@ -26,10 +25,10 @@ function GuildRosterDumper_exportData()
 		end
 				
 		guild = GetGuildInfo("player")
-		GuildRosterDumperDataFrame = "Guild Roster Dump for " .. guild .. " at " .. date("%Y-%m-%d %H:%M:%S") .. "\r\n" .. "\r\n"
+		GuildRosterDumperDataFrame = "Guild Roster Dump for " .. guild .. " at " .. date("%y-%m-%d %H:%M:%S") .. "\r\n" .. "\r\n"
 		
-		for i in GuildRosterDumperDataDB do
-				GuildRosterDumperFrame = GuildRosterDumperDataFrame .. GuildRosterDumperDataDB[i].arg1 .. "," .. GuildRosterDumperDataDB[i].arg2 .. "," .. GuildRosterDumperDataDB[i].arg3 .. "," .. GuildRosterDumperDataDB[i].arg4 .. "," .. GuildRosterDumperDataDB[i].arg5 .. "," .. GuildRosterDumperDataDB[i].arg6 .. "," .. GuildRosterDumperDataDB[i].arg7 .. "," .. GuildRosterDumperDataDB[i].arg8 .. "," .. GuildRosterDumperDataDB[i].arg10 .. "\r\n"
+		for i in GuildRosterDumperDB do
+				GuildRosterDumperFrame = GuildRosterDumperDataFrame .. GuildRosterDumperDataDB[i].arg1 .. "," .. GuildRosterDumperDataDB[i].arg2 .. "," .. GuildRosterDumperDataDB[i].arg3 .. "," .. GuildRosterDumperDataDB[i].arg4 .. "," .. GuildRosterDumperDataDB[i].arg5 .. "," .. GuildRosterDumperDataDB[i].arg6 .. "," .. GuildRosterDumperDataDB[i].arg7 .. "," .. GuildRosterDumperDataDB[i].arg8 .. "," .. GuildRosterDumperDataDB[i].arg9 .. "," .. GuildRosterDumperDataDB[i].arg10 .. "," .. GuildRosterDumperDataDB[i].arg11 .. "\r\n"
 		end
 		
 		GuildRosterDumper_ExportRaidFrameEditBox1:SetFont("Fonts\\FRIZQT__.TTF", "8")

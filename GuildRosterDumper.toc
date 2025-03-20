@@ -2,7 +2,6 @@
 ## Title: GuildRosterDumper
 ## Notes: Dumps guild roster to CSV file
 ## Author: Droopystaff
-## SavedVariables: GuildRosterDumperData
 
 GuildRosterDumper.lua
 GuildRosterDumper.xml
