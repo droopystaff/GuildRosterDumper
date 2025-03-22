@@ -4,5 +4,4 @@
 ## Author: Droopystaff
 ## SavedVariables: GuildRosterDumperData
 
-GuildRosterDumper.lua
 GuildRosterDumper.xml
