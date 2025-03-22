@@ -26,7 +26,7 @@ function GuildRosterDumper_exportData()
 		end
 				
 		guild = GetGuildInfo("player")
-		GuildRosterDumperDataFrame = "Guild Roster Dump for " .. guild .. " at " .. date("%Y-%m-%d %H:%M:%S") .. "\r" .. "\r" .. "\r" .. "\r" .. "name,rank,rankIndex,level,class,zone,note,officerNote" .. "\r"  .. "\r" .. "\r"
+		GuildRosterDumperDataFrame = "Guild Roster Dump for " .. guild .. " at " .. date("%Y-%m-%d %H:%M:%S") .. "\r" .. "\r" .. "\r" .. "\r" .. "name,rank,level,class,zone,note,officerNote" .. "\r"  .. "\r" .. "\r"
 		
 		for i in GuildRosterDumperDataDB do
 				GuildRosterDumperDataFrame = GuildRosterDumperDataFrame .. GuildRosterDumperDataDB[i].name .. "," .. GuildRosterDumperDataDB[i].rank .. "," .. GuildRosterDumperDataDB[i].level .. "," .. GuildRosterDumperDataDB[i].class .. "," .. GuildRosterDumperDataDB[i].zone .. "," .. GuildRosterDumperDataDB[i].note .. "," .. GuildRosterDumperDataDB[i].officerNote .. "\r"
