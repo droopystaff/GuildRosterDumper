@@ -2,7 +2,7 @@
 ..\FrameXML\UI.xsd">
     <Script file="GuildRosterDumper.lua"/>
 
-    <Frame name="GuildRosterDumperDataFrame">
+    <Frame name="GuildRosterDumperFrame">
         <Scripts>
         	<OnLoad>
           		GuildRosterDumper_OnLoad();
